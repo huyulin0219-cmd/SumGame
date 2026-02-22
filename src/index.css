@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Serif SC", serif;
+  --font-ancient: "Ma Shan Zheng", cursive;
+  --font-elegant: "ZCOOL XiaoWei", serif;
+  
+  --color-paper: #FDFBF7;
+  --color-ink: #1A1A1A;
+  --color-vermilion: #E63946;
+  --color-gold: #FFD700;
+  --color-jade: #2A9D8F;
+  --color-royal-blue: #457B9D;
+  --color-sunset: #F4A261;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-paper text-ink overflow-hidden;
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+  }
+}
+
+/* Ancient Border Pattern */
+.ancient-border {
+  border: 4px double var(--color-gold);
+  position: relative;
+  background: white;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+}
+
+.ancient-border::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px solid var(--color-vermilion);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Vivid Block Colors - Traditional Chinese Pigments */
+.block-vibrant-1 { background: #E63946; color: #FDFBF7; } /* 朱砂 - Cinnabar */
+.block-vibrant-2 { background: #F4A261; color: #1A1A1A; } /* 晚霞 - Sunset */
+.block-vibrant-3 { background: #FFD700; color: #1A1A1A; } /* 黄金 - Gold */
+.block-vibrant-4 { background: #2A9D8F; color: #FDFBF7; } /* 石绿 - Malachite */
+.block-vibrant-5 { background: #457B9D; color: #FDFBF7; } /* 石青 - Azurite */
+.block-vibrant-6 { background: #264653; color: #FDFBF7; } /* 黛蓝 - Indigo */
+.block-vibrant-7 { background: #E76F51; color: #FDFBF7; } /* 赭石 - Ochre */
+.block-vibrant-8 { background: #8338EC; color: #FDFBF7; } /* 紫檀 - Sandalwood */
+.block-vibrant-9 { background: #3A86FF; color: #FDFBF7; } /* 琉璃 - Glaze */
+
+/* Custom scrollbar for ancient look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F2ED;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E63946;
+  border-radius: 3px;
+}
